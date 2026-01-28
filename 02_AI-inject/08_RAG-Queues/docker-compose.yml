@@ -1,0 +1,12 @@
+services:
+  valkey:
+    image: valkey/valkey
+    ports:
+      - "6379:6379"
+
+
+# ValKey is a Redis-compatible server running in Docker on port 6379. 
+# It stores data as key-value pairs, which allows Python programs to save and retrieve information quickly. 
+# The 'redis' Python library connects to ValKey just like it would to a normal Redis server, letting us perform operations like set/get keys. 
+# RQ (Redis Queue) uses this same Redis/ValKey backend to manage background tasks asynchronously, which is especially useful for AI workflows, like training models or processing data without blocking the main program. 
+# In short, ValKey provides the storage, redis library handles communication, and RQ manages queued tasks — together forming a fast, async AI development setup.
